@@ -4,14 +4,6 @@ class Solution {
     public String solution(String[] survey, int[] choices) {
         String answer = "";
 
-        // 1 : 매우 비동의
-        // 2 : 비동의
-        // 3 : 약간 비동의
-        // 4 : 모르겠음
-        // 5 : 약간 동의
-        // 6 : 동의
-        // 7 : 매우 동의
-
         int[] score = {3,2,1,0,1,2,3};
         Map<String, Integer> typeScore = new HashMap<>();
 
@@ -35,10 +27,11 @@ class Solution {
         }
 
 
-            answer = typeScore.getOrDefault("R", 0) >= typeScore.getOrDefault("T", 0) ? "R" : "T";
+        answer = typeScore.getOrDefault("R", 0) >= typeScore.getOrDefault("T", 0) ? "R" : "T";
         answer += typeScore.getOrDefault("C", 0) >= typeScore.getOrDefault("F", 0) ? "C" : "F";
         answer += typeScore.getOrDefault("J", 0) >= typeScore.getOrDefault("M", 0) ? "J" : "M";
         answer += typeScore.getOrDefault("A", 0) >= typeScore.getOrDefault("N", 0) ? "A" : "N";
+        
         return answer;
     }
 }
