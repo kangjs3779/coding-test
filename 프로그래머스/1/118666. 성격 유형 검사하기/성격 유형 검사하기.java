@@ -35,11 +35,10 @@ class Solution {
         }
 
 
-        answer = typeScore.getOrDefault("R", 0) > typeScore.getOrDefault("T", 0)  || typeScore.getOrDefault("R", 0) == typeScore.getOrDefault("T", 0) ? "R" : "T";
-        answer += typeScore.getOrDefault("C", 0) > typeScore.getOrDefault("F", 0) || typeScore.getOrDefault("C", 0) == typeScore.getOrDefault("F", 0) ? "C" : "F";
-        answer += typeScore.getOrDefault("J", 0) > typeScore.getOrDefault("M", 0) || typeScore.getOrDefault("J", 0) == typeScore.getOrDefault("M", 0) ? "J" : "M";
-        answer += typeScore.getOrDefault("A", 0) > typeScore.getOrDefault("N", 0) || typeScore.getOrDefault("A", 0) == typeScore.getOrDefault("N", 0) ? "A" : "N";
-
+            answer = typeScore.getOrDefault("R", 0) >= typeScore.getOrDefault("T", 0) ? "R" : "T";
+        answer += typeScore.getOrDefault("C", 0) >= typeScore.getOrDefault("F", 0) ? "C" : "F";
+        answer += typeScore.getOrDefault("J", 0) >= typeScore.getOrDefault("M", 0) ? "J" : "M";
+        answer += typeScore.getOrDefault("A", 0) >= typeScore.getOrDefault("N", 0) ? "A" : "N";
         return answer;
     }
 }
